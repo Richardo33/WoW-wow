@@ -1,0 +1,96 @@
+.profileScreen {
+  display: flex;
+  background-color: #f2f2f2;
+}
+
+.profileScreen .leftSide {
+  flex: 25%;
+}
+
+.profileScreen .rightPart {
+  flex: 75%;
+  display: flex;
+  flex-direction: column;
+  background-color: #f2f2f2;
+}
+
+.profileScreen .rightPart h1 {
+  font-family: "Times New Roman";
+  margin-top: 50px;
+  margin-bottom: 40px;
+  font-weight: 300;
+}
+
+.profileScreen .rightPart .topPart {
+  background-color: pink;
+  display: flex;
+  flex: 50%;
+  padding: 20px;
+  border-style: none;
+  border-radius: 10px;
+}
+
+.profileScreen .rightPart .topPart .leftDiv {
+  flex: 70%;
+  display: flex;
+}
+
+.profileScreen .rightPart .topPart .leftDiv img {
+  margin-left: 30px;
+}
+
+.profileScreen .rightPart .topPart .leftDiv p {
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+
+.profileScreen .rightPart .topPart .leftDiv .mail {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-right: 20px;
+  margin-bottom: 10px;
+}
+
+.profileScreen .rightPart .topPart .leftDiv .gender {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.profileScreen .rightPart .topPart .leftDiv .phone {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.profileScreen .rightPart .topPart .leftDiv .address {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.profileScreen .rightPart .topPart .rightDiv {
+  flex: 30%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.profileScreen .rightPart .topPart .rightDiv button {
+  margin-top: 20px;
+  background-color: red;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 75px;
+  padding-right: 75px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+}
+
+.profileScreen .rightPart .bottomPart {
+  flex: 50%;
+}

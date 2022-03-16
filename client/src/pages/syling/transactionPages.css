@@ -1,0 +1,22 @@
+.transactionScreen .tableContent {
+  margin: 200px 50px;
+}
+
+.triangle {
+  display: inline-block;
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  content: "";
+  border-top: 1em solid #1c9cd2;
+  border-right: 0.8em solid transparent;
+  border-bottom: 0;
+  border-left: 0.8em solid transparent;
+}
+
+.transactionScreen .tableContent thead th {
+  color: red;
+}
+
+.transactionScreen .tableContent tbody tr td {
+  padding: 20px 20px;
+}

@@ -1,0 +1,17 @@
+.dropdown-toggle::after {
+  display: none !important;
+  border: none !important;
+}
+
+.dropdown-toggle {
+  box-shadow: none !important;
+}
+
+.navbar-brand {
+  padding-left: -300px !important;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,0 +1,90 @@
+.bookDetailScreen {
+  display: flex;
+  background-color: #f2f2f2;
+}
+
+.bookDetailScreen .leftSide {
+  flex: 25%;
+}
+
+.bookDetailScreen .rightSide {
+  flex: 75%;
+  display: flex;
+  flex-direction: column;
+}
+
+.bookDetailScreen .rightSide .topPart {
+  flex: 50%;
+  display: flex;
+  margin-top: 30px;
+}
+
+.bookDetailScreen .rightSide .topPart .leftTop {
+  flex: 50%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.bookDetailScreen .rightSide .topPart .leftTop img {
+  width: 300px;
+  justify-content: center;
+  align-items: center;
+}
+
+.bookDetailScreen .rightSide .topPart .rightTop {
+  flex: 50%;
+}
+
+.bookDetailScreen .rightSide .topPart .rightTop h6 {
+  margin-top: 30px;
+  font-weight: 800;
+}
+
+.bookDetailScreen .rightSide .bottomPart {
+  flex: 50%;
+  margin-top: 50px;
+}
+
+.bookDetailScreen h1 {
+  font-family: "Times New Roman";
+  font-weight: 700;
+}
+
+.bookDetailScreen p {
+  color: gray;
+  text-align: justify;
+  padding-right: 20px;
+  size: 18px;
+}
+
+.bookDetailScreen .rightSide .bottomPart .botDetail {
+  display: flex;
+  flex-direction: column;
+}
+
+.bookDetailScreen .rightSide .bottomPart .botDetail .button {
+  justify-content: flex-end;
+  display: flex;
+  padding-top: 30px;
+}
+
+.bookDetailScreen .rightSide .bottomPart .botDetail .button .addList {
+  background-color: red;
+  margin-right: 20px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-bottom: 50px;
+  border: none;
+  color: white;
+}
+
+.bookDetailScreen .rightSide .bottomPart .botDetail .button .readBook {
+  background: #cdcdcdb2;
+  margin-right: 20px;
+  padding: 5px 20px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-bottom: 50px;
+  border: none;
+}

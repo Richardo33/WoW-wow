@@ -1,0 +1,51 @@
+.BackContent {
+  height: 100vh;
+  background-image: url("../../asset/Vector\ 1.png");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: right center;
+  align-items: center;
+  display: flex;
+}
+
+.BackContent .content {
+  margin-left: 100px;
+  width: 470px;
+}
+
+.content p {
+  margin-left: 30px;
+  font-size: 20px;
+  margin-top: -50px;
+  margin-bottom: 50px;
+  font-weight: 400px;
+}
+
+.BackContent .content img {
+  width: 450px;
+  margin-top: -50px;
+}
+
+.buttonSignUp {
+  background-color: #d60000;
+  border: none;
+  color: white;
+  padding: 10px 60px;
+  border-radius: 5px;
+  margin-right: 20px;
+  margin-left: 30px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.buttonSignIn {
+  background: #cdcdcdb2 70%;
+  border: none;
+  color: black;
+  padding: 10px 60px;
+  border-radius: 5px;
+  margin-right: 20px;
+  margin-left: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}

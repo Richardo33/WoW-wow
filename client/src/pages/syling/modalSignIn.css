@@ -1,0 +1,20 @@
+.modalInput {
+  padding: 10px 20px;
+}
+
+.modal {
+  margin-top: 100px;
+}
+
+.form-control {
+  background-color: #bcbcbc40;
+}
+
+.buttSignIn {
+  margin: 10px 20px;
+}
+
+.buttSignIn p {
+  padding-top: 5px;
+  padding-bottom: -400px;
+}

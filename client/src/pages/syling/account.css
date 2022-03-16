@@ -1,0 +1,46 @@
+.leftSide {
+  height: 100%;
+  /* align-items: center;
+  display: flex; */
+  padding: 20px;
+  background-color: #f2f2f2;
+}
+
+.leftSide .leftSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.leftSide .leftSection .image {
+  width: 80px;
+  margin-right: 80px;
+}
+
+.leftSide .leftSection p {
+  font-size: 24px;
+  color: red;
+}
+
+.leftSide .iconProfile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-right: 20px;
+}
+
+.leftSide .iconSubscribe {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.leftSide .iconLogout {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.leftSide .Icon {
+  padding-right: 20px;
+}

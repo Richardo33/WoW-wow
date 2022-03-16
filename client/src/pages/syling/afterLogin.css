@@ -1,0 +1,35 @@
+.pageBar {
+  display: flex;
+  /* height: 100vh; */
+  background-color: #f2f2f2;
+}
+
+.pageBar .afterLoginLeft {
+  flex: 25%;
+  height: 100%;
+  background-color: aqua;
+}
+
+.pageBar .afterLoginRight {
+  flex: 75%;
+  /* height: 100vh; */
+  display: flex;
+  flex-direction: column;
+}
+
+.pageBar .afterLoginRight h2 {
+  font-family: "Times New Roman";
+  font-weight: 700;
+  margin: 30px 5px;
+}
+
+.pageBar .afterLoginRight .rightBottom {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  background-color: #f2f2f2;
+}
+
+.pageBar .afterLoginRight .rightBottom div {
+  margin-right: 5%;
+}

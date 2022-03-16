@@ -1,0 +1,66 @@
+/* .addBookScreen {
+  background-color: #f2f2f2;
+} */
+
+.addBookScreen .fillScreen {
+  margin: 5px 100px;
+}
+
+.addBookScreen .fillScreen h1 {
+  padding-bottom: 40px;
+  font-family: "Times New Roman";
+  font-weight: 700;
+}
+
+.addBookScreen .fillScreen label {
+  border: solid 1px;
+  width: 200px;
+  border-radius: 10px;
+  border-color: #ced4da;
+  cursor: pointer;
+  padding-left: 10px;
+  background-color: #d2d2d240;
+}
+
+.addBookScreen .fillScreen .addFile {
+  display: none;
+}
+
+.addBookScreen .fillScreen label img {
+  margin-left: 30px;
+  cursor: pointer;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.addBookScreen .fillScreen .buttonLogout {
+  margin-top: 20px;
+}
+
+.addBookScreen .fillScreen .buttom {
+  display: flex;
+  flex-direction: column;
+}
+
+.addBookScreen .fillScreen .buttom button {
+  align-items: flex-end;
+  background-color: #ff0000;
+  padding: 5px 30px;
+  border-radius: 5px;
+  color: white;
+  border: none;
+}
+
+.addBookScreen .fillScreen .buttom .buttonLogout {
+  display: flex;
+  justify-content: end;
+}
+
+.addBookScreen .fillScreen .buttom .buttonLogout img {
+  padding-left: 20px;
+}
+
+.form-control {
+  box-shadow: none !important;
+  background-color: #d2d2d240;
+}
