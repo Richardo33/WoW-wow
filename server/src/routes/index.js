@@ -36,7 +36,7 @@ router.get("/user/:id", getUserId);
 router.patch("/user/:id", updateUser);
 router.delete("/user/:id", deleteUser);
 
-router.post("/addbook", auth, uploadFile("bookFile", "imgCover"), addBook);
+router.post("/addbook", uploadFile("bookFile", "imgCover"), addBook);
 router.get("/showbooks", getBook);
 router.get("/book/:id", getBookId);
 router.patch(

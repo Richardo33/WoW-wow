@@ -1,14 +1,17 @@
 // import React, { useState } from "react";
 import Account from "../component/account";
 import SubscribeBook from "../asset/Frame1.png";
-import { dataForBook } from "../component/dataDummy/listBook";
+// import { dataForBook } from "../component/dataDummy/listBook";
 import { Modal } from "react-bootstrap";
 import { useState } from "react";
+// import {API} from "../config/api"
+import { Navigate } from "react-router-dom";
+import { dataMyBook } from "../component/dataDummy/myListBook";
 
 // import { useNavigate } from "react-router-dom";
 
 function AfterLogin() {
-  console.log(dataForBook);
+  // console.log(dataForBook);
 
   const [show, setShow] = useState(false);
 
@@ -17,6 +20,19 @@ function AfterLogin() {
   function handleShow() {
     setShow(true);
   }
+
+  // const getBook = async () => {
+  //   try {
+  //     const response = await API.get("/showbooks");
+
+  //   } catch (error) {
+  //     console.log(error);
+  //     res.send({
+  //       status: "failed",
+  //       message: "cannot show all the data book",
+  //     });
+  //   }
+  // };
 
   return (
     <>
@@ -41,9 +57,15 @@ function AfterLogin() {
           <div className="rightBottom">
             <br />
 
-            {dataForBook.map((item, index) => {
+            {dataMyBook.map((item, index) => {
               return (
-                <div key={index} className="listBookkk" onClick={handleShow}>
+                <div
+                  key={index}
+                  className="listBookkk"
+                  onClick={() => {
+                    Navigate(`/bookDetail`);
+                  }}
+                >
                   <img src={item.image} alt="" />
                   <h3>{item.title}</h3>
                   <p>{item.author}</p>
