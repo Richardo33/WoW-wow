@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { SubsContextProvider } from "./component/hook/subscribeContext";
+import { UserContextProvider } from "./component/hook/userContext";
+import { BrowserRouter } from "react-router-dom";
 
 // import { QueryClient, QueryClientProvider } from "react-query";
 
@@ -11,10 +13,13 @@ import { SubsContextProvider } from "./component/hook/subscribeContext";
 ReactDOM.render(
   <React.StrictMode>
     <SubsContextProvider>
-      {/* <QueryClientProvider client={client}> */}
-      <App />
-      {/* </QueryClientProvider> */}
+      <UserContextProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </UserContextProvider>
     </SubsContextProvider>
   </React.StrictMode>,
+
   document.getElementById("root")
 );

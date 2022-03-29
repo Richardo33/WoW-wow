@@ -1,12 +1,15 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Modal, Button, Form, Alert } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import "../../pages/syling/modalSignIn.css";
+import { UserContext } from "../hook/userContext";
 
-import { API } from "../../config/api";
+import { API, setAuthToken } from "../../config/api";
 
 function ButtonSignIn() {
   const [show, setShow] = useState(false);
+
+  const [state, dispacth] = useContext(UserContext);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -45,13 +48,27 @@ function ButtonSignIn() {
       console.log(response);
 
       if (response?.status == 200) {
+        setAuthToken(response.data.data.token);
+
+        dispacth({
+          type: "LOGIN_SUCCESS",
+          payload: response.data.data,
+        });
+
+        if (response.data.data.role == "admin") {
+          navigate("/transactions-admin");
+          console.log(response.data.data.role);
+        } else {
+          navigate("/home");
+        }
+
         const alert = (
           <Alert variant="success" className="py-1">
             Login success
           </Alert>
         );
         setMessage(alert);
-        navigate("/home");
+        // navigate("/home");
       }
     } catch (error) {
       const alert = (
@@ -63,11 +80,12 @@ function ButtonSignIn() {
       console.log(error);
     }
   };
+  console.log(state);
 
   return (
     <div>
       <Button
-        className="px-5 mx-3"
+        className="px-5 mx-3 fw-bold"
         size="lg"
         variant="secondary"
         onClick={handleShow}
@@ -106,7 +124,7 @@ function ButtonSignIn() {
               name="password"
             />
           </Form.Group>
-          <Button className="buttSignIn" variant="danger" type="submit">
+          <Button className="buttSignIn fw-bold" variant="danger" type="submit">
             <p> Sign In </p>
           </Button>
         </Form>

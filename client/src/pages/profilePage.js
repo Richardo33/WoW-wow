@@ -30,7 +30,7 @@ function ProfilePages() {
                 </div>
                 <div className="iconName">
                   <p>
-                    <b>egigans@gmail.com</b>
+                    <b style={{ color: "black" }}>egigans@gmail.com</b>
                   </p>
                   <p style={{ color: "gray" }}>Email</p>
                 </div>
@@ -41,7 +41,7 @@ function ProfilePages() {
                 </div>
                 <div className="iconName">
                   <p>
-                    <b>Male</b>
+                    <b style={{ color: "black" }}>Male</b>
                   </p>
                   <p style={{ color: "gray" }}>Gender</p>
                 </div>
@@ -52,7 +52,7 @@ function ProfilePages() {
                 </div>
                 <div className="iconName">
                   <p>
-                    <b>0812-8623-8911</b>
+                    <b style={{ color: "black" }}>0812-8623-8911</b>
                   </p>
                   <p style={{ color: "gray" }}>Mobile phone</p>
                 </div>
@@ -63,7 +63,9 @@ function ProfilePages() {
                 </div>
                 <div className="IconName">
                   <p>
-                    <b>Perumahan Permata Bintaro Residence C-3</b>
+                    <b style={{ color: "black" }}>
+                      Perumahan Permata Bintaro Residence C-3
+                    </b>
                   </p>
                   <p style={{ color: "gray" }}>Address</p>
                 </div>

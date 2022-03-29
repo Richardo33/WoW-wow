@@ -5,6 +5,7 @@ import KlipWhite from "../asset/klipWhite.png";
 import "./syling/addBook.css";
 import PinWhite from "../asset/pinWhite.png";
 // import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 import { API } from "../config/api";
 // import { Navigate } from "react-router-dom";
@@ -23,6 +24,13 @@ function AddBook() {
     bookFile: "",
     imgCover: "",
   });
+
+  // const handleAlert = (e) => {
+  //   if (response.status == "success") {
+  //     Swal.fire("Well Done!", "Add Book Successfully!", "success");
+  //   } else {
+  //   }
+  // };
 
   const handleChange = (e) => {
     setForm({
@@ -53,11 +61,18 @@ function AddBook() {
       formData.set("bookFile", form.bookFile[0], form.bookFile[0].name);
       formData.set("imgCover", form.imgCover[0], form.imgCover[0].name);
 
-      console.log(formData);
+      // console.log(formData);
       // Insert data user to database
       const response = await API.post("/addbook", formData, config);
-      // console.log("ini res" + response);
+      console.log(response);
+
+      if (response.status === 200) {
+        Swal.fire("Well Done!", "Add Book Successfully!", "success");
+      } else {
+        Swal.fire("failed!", "cannot added book!", "warning");
+      }
     } catch (error) {
+      Swal.fire("failed!", "cannot added book!", "warning");
       console.log(error);
     }
   };
@@ -68,9 +83,9 @@ function AddBook() {
         <Navigasi />
       </div>
 
-      <div className="fillScreen" style={{ padding: "10%" }}>
+      <div className="fillScreen py-2" style={{ padding: "10%" }}>
         <h1>Add Book</h1>
-        <Form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit} className="">
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Control
               type="text"
@@ -95,7 +110,10 @@ function AddBook() {
               onChange={handleChange}
             />
           </Form.Group>
-          <Form.Group className="text" controlId="exampleForm.ControlInput1">
+          <Form.Group
+            className="text mb-3"
+            controlId="exampleForm.ControlInput1"
+          >
             <Form.Control
               type="text"
               placeholder="Author"
@@ -134,7 +152,7 @@ function AddBook() {
                 />
                 <img src={KlipWhite} alt="" />
               </label>
-              <label>
+              <label className="mx-3">
                 Add image cover
                 <input
                   type="file"

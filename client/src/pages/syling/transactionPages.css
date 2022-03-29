@@ -1,5 +1,6 @@
 .transactionScreen .tableContent {
-  margin: 200px 50px;
+  margin: 20px 50px;
+  /* background-color: aqua; */
 }
 
 .triangle {
@@ -19,4 +20,10 @@
 
 .transactionScreen .tableContent tbody tr td {
   padding: 20px 20px;
+  text-decoration: none;
+}
+
+.transactionScreen .tableContent tbody tr td a {
+  text-decoration: none;
+  color: black;
 }

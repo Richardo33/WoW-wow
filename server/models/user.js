@@ -19,10 +19,10 @@ module.exports = (sequelize, DataTypes) => {
       user.belongsToMany(models.books, {
         as: "book",
         through: {
-          model: "listBookTransfer",
+          model: "listBookUser",
           as: "bridge",
         },
-        foreignKey: "idBooks",
+        foreignKey: "idUser",
       });
 
       user.hasMany(models.transaction, {
@@ -39,6 +39,7 @@ module.exports = (sequelize, DataTypes) => {
       email: DataTypes.STRING,
       password: DataTypes.STRING,
       isSubs: DataTypes.STRING,
+      role: DataTypes.STRING,
       createdAt: DataTypes.DATE,
       updatedAt: DataTypes.DATE,
     },

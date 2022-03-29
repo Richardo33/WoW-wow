@@ -5,13 +5,14 @@ import DropPicture from "../asset/drop.png";
 import "../pages/syling/nav.css";
 import AddDrop from "../asset/addDrop.png";
 import Logout from "../asset/logoutRed.png";
+import Trans from "../asset/trans.png";
 
 function Navigasi() {
   return (
     <div>
-      <Navbar bg="" variant="" fixed="top" className="navbar">
+      <Navbar bg="" variant="" className="navbar pb-3">
         <Container>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="/home">
             <img
               alt=""
               src={Logo}
@@ -26,11 +27,15 @@ function Navigasi() {
             </Dropdown.Toggle>
 
             <Dropdown.Menu>
-              <Dropdown.Item href="#/action-1">
+              <Dropdown.Item href="/addBook-admin">
                 <img src={AddDrop} alt="" /> Add Book
               </Dropdown.Item>{" "}
               <hr />
-              <Dropdown.Item href="#/action-2">
+              <Dropdown.Item href="/transactions-admin">
+                <img src={Trans} style={{ width: "40px" }} alt="" /> Transaction
+              </Dropdown.Item>
+              <hr />
+              <Dropdown.Item href="/">
                 <img src={Logout} alt="" /> Log Out
               </Dropdown.Item>
             </Dropdown.Menu>

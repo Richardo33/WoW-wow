@@ -1,9 +1,11 @@
 /* .addBookScreen {
-  background-color: #f2f2f2;
+  background-color: red;
 } */
 
 .addBookScreen .fillScreen {
-  margin: 5px 100px;
+  /* margin: 5px 10px; */
+  /* background-color: aqua; */
+  padding-top: 10px;
 }
 
 .addBookScreen .fillScreen h1 {

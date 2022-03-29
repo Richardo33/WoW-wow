@@ -18,7 +18,10 @@ module.exports = {
         type: Sequelize.STRING,
       },
       isSubs: {
-        type: Sequelize.BOOLEAN,
+        type: Sequelize.STRING,
+      },
+      role: {
+        type: Sequelize.STRING,
       },
       createdAt: {
         allowNull: false,

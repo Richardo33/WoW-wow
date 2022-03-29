@@ -3,12 +3,12 @@ import Account from "../component/account";
 import SubscribeBook from "../asset/Frame1.png";
 // import { dataForBook } from "../component/dataDummy/listBook";
 import { Modal } from "react-bootstrap";
-import { useState } from "react";
-// import {API} from "../config/api"
-import { Navigate } from "react-router-dom";
-import { dataMyBook } from "../component/dataDummy/myListBook";
+import { useEffect, useState } from "react";
+import { API } from "../config/api";
+// import { Navigate } from "react-router-dom";
+// import { dataMyBook } from "../component/dataDummy/myListBook";
 
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function AfterLogin() {
   // console.log(dataForBook);
@@ -17,65 +17,78 @@ function AfterLogin() {
 
   const handleClose = () => setShow(false);
 
-  function handleShow() {
-    setShow(true);
-  }
+  // function handleShow() {
+  //   setShow(true);
+  // }
 
-  // const getBook = async () => {
-  //   try {
-  //     const response = await API.get("/showbooks");
+  const navigate = useNavigate();
 
-  //   } catch (error) {
-  //     console.log(error);
-  //     res.send({
-  //       status: "failed",
-  //       message: "cannot show all the data book",
-  //     });
-  //   }
-  // };
+  const [book, setBook] = useState([]);
+
+  const getBooks = async () => {
+    try {
+      // console.log(book);
+      const response = await API.get("/showbooks");
+      setBook(response.data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getBooks();
+  }, []);
+
+  const handleDetail = (id) => {
+    navigate(`/bookDetail/${id}`);
+  };
 
   return (
-    <>
+    <div className="pageBar row">
       <Modal show={show} onHide={handleClose} className="text-danger">
         <div className="px-5 py-3">
           PLEASE SUBSCRIBE FIRST TO ACCESS THE BOOKS
         </div>
       </Modal>
 
-      <div className="pageBar">
-        <div className="afterLoginLeft position-relative">
+      <div className="row">
+        <div className="col-3 position-relative">
           <div className="position-fixed">
             <Account />
           </div>
         </div>
 
-        <div className=" afterLoginRight ">
-          <div className="rightTop">
+        <div className="col-9  ">
+          <div className="">
             <img src={SubscribeBook} alt="" />
           </div>
-          <h2>List Book</h2>
-          <div className="rightBottom">
-            <br />
-
-            {dataMyBook.map((item, index) => {
-              return (
-                <div
-                  key={index}
-                  className="listBookkk"
-                  onClick={() => {
-                    Navigate(`/bookDetail`);
-                  }}
-                >
-                  <img src={item.image} alt="" />
-                  <h3>{item.title}</h3>
-                  <p>{item.author}</p>
-                </div>
-              );
-            })}
+          <h2 className="">List Book</h2>
+          <div className="row d-flex">
+            <div className="row text-center">
+              {book.map((item) => {
+                return (
+                  <div
+                    key={item.id}
+                    className="col-3 text-start"
+                    style={{ cursor: "pointer" }}
+                    onClick={() => handleDetail(item.id)}
+                  >
+                    <img
+                      src={`http://localhost:5000/uploads/${item.imgCover}`}
+                      alt=""
+                      style={{ width: 200, height: 300 }}
+                      className="py-2"
+                    />
+                    <h3>{item.title}</h3>
+                    <p>{item.author}</p>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

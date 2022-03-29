@@ -27,12 +27,15 @@ const {
   addTransaction,
   getTransaction,
   getTransactionId,
+  editTransaction,
 } = require("../controlers/transaction");
 
-const { register, login } = require("../controlers/auth");
+const { register, login, checkAuth } = require("../controlers/auth");
+
+const { addMyList } = require("../controlers/myList");
 
 router.get("/users", getUsers);
-router.get("/user/:id", getUserId);
+router.get("/user", auth, getUserId);
 router.patch("/user/:id", updateUser);
 router.delete("/user/:id", deleteUser);
 
@@ -47,11 +50,20 @@ router.patch(
 );
 router.delete("/book/:id", deleteBook);
 
-router.post("/transaction", addTransaction);
+router.post(
+  "/transaction",
+  auth,
+  uploadFile("", "transactionProof"),
+  addTransaction
+);
 router.get("/transactions", getTransaction);
 router.get("/transaction/:id", getTransactionId);
+router.patch("/editTrans/:id", editTransaction);
 
 router.post("/register", register);
 router.post("/login", login);
+router.get("/checkAuth", auth, checkAuth);
+
+router.post("/addMyList", auth, addMyList);
 
 module.exports = router;

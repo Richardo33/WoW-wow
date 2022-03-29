@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       transactionProof: DataTypes.STRING,
       remainingActive: DataTypes.INTEGER,
-      userStatus: DataTypes.BOOLEAN,
+      userStatus: DataTypes.STRING,
       paymentStatus: DataTypes.STRING,
       idUser: DataTypes.INTEGER,
     },

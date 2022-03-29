@@ -53,7 +53,7 @@ function ButtonSignUp() {
           </Alert>
         );
         setMessage(alert);
-        navigate("/home");
+        // navigate("/home");
       } else {
         const alert = (
           <Alert variant="danger" className="py-1">
@@ -120,8 +120,8 @@ function ButtonSignUp() {
               onChange={handleChange}
             />
           </Form.Group>
-          <Button className="buttSignUp" variant="danger" type="submit">
-            <p> Sign Up </p>
+          <Button className="buttSignUp fw-bold" variant="danger" type="submit">
+            <p> SignUp </p>
           </Button>
         </Form>
 

@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
           model: "listBookUser",
           as: "bridge",
         },
-        foreignKey: "idUser",
+        foreignKey: "idBooks",
       });
     }
   }
@@ -26,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
       pages: DataTypes.INTEGER,
       author: DataTypes.STRING,
       isbn: DataTypes.INTEGER,
-      about: DataTypes.STRING,
+      about: DataTypes.TEXT,
       bookFile: DataTypes.STRING,
       imgCover: DataTypes.STRING,
     },

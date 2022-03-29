@@ -21,17 +21,16 @@
 }
 
 .subscribeScreen .rightSide .form .cardBody {
-  background-color: #f2f2f2;
+  background-color: white;
+  padding: 10px 100px;
 }
 
 .subscribeScreen .rightSide .fileInput {
   display: none;
   cursor: pointer;
-}
-
-.subscribeScreen .rightSide label img {
-  margin-left: 210px;
-  cursor: pointer;
+  /* padding-left: -1000px !important;
+  background-color: red !important;
+  color: #ced4da !important; */
 }
 
 .subscribeScreen .rightSide label {
@@ -41,4 +40,17 @@
   border-color: #ced4da;
   cursor: pointer;
   padding: 3px px;
+}
+
+.subscribeScreen .rightSide label img {
+  padding: 0rem;
+}
+
+.butttonSend {
+  background-color: red;
+  border-radius: 5px;
+  padding: 5px 165px;
+  color: white !important;
+  font-size: 20px !important;
+  border: none;
 }

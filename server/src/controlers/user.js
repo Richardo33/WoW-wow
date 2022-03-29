@@ -18,10 +18,12 @@ exports.getUsers = async (req, res) => {
 
 exports.getUserId = async (req, res) => {
   try {
-    const { id } = req.params;
+    // const { id } = req.params;
 
     const data = await user.findOne({
-      where: { id },
+      where: {
+        id: req.user.id,
+      },
       attributes: {
         exclude: ["password", "createdAt", "updateAt"],
       },

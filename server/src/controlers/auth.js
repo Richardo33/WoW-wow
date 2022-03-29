@@ -29,6 +29,7 @@ exports.register = async (req, res) => {
       fullName: req.body.fullName,
       email: req.body.email,
       password: hashedPassword,
+      role: "user",
     });
 
     const token = jwt.sign({ id: user.id }, process.env.TOKEN_KEY);
@@ -92,12 +93,53 @@ exports.login = async (req, res) => {
       data: {
         fullName: userExist.fullName,
         email: userExist.email,
+        role: userExist.role,
         token,
       },
     });
   } catch (error) {
     console.log(error);
     res.status(500).send({
+      status: "failed",
+      message: "server error",
+    });
+  }
+};
+
+exports.checkAuth = async (req, res) => {
+  try {
+    const id = req.user.id;
+
+    const dataUser = await user.findOne({
+      where: {
+        id: id,
+      },
+      attributes: {
+        exclude: ["createdAt", "updatedAt", "password"],
+      },
+    });
+
+    if (!dataUser) {
+      return res.status(404).send({
+        status: "failed",
+      });
+    }
+
+    res.send({
+      status: "success",
+      data: {
+        user: {
+          id: dataUser.id,
+          name: dataUser.fullName,
+          email: dataUser.email,
+          role: dataUser.role,
+          isSubs: dataUser.isSubs,
+        },
+      },
+    });
+  } catch (error) {
+    console.log(error);
+    res.send({
       status: "failed",
       message: "server error",
     });

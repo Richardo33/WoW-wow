@@ -26,7 +26,7 @@ exports.addBook = async (req, res) => {
 
 exports.getBook = async (req, res) => {
   try {
-    const data = await books.findAll();
+    const data = await books.findAll({ order: [["updatedAt", "DESC"]] });
 
     res.send({
       status: "success",
@@ -48,7 +48,7 @@ exports.getBookId = async (req, res) => {
     const data = await books.findOne({
       where: { id },
       attributes: {
-        exclude: ["imgCover", "createdAt", "updatedAt"],
+        exclude: ["createdAt", "updatedAt"],
       },
     });
     res.send({
