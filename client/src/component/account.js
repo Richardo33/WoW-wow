@@ -33,7 +33,7 @@ function Account() {
   const userData = async (req, res) => {
     try {
       const res = await API.get("/user");
-      console.log(res);
+      // console.log(res);
       setdat(res.data.data.user);
     } catch (error) {
       console.log(error);

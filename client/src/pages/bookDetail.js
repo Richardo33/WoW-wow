@@ -29,7 +29,7 @@ function BookDetail() {
   const getBook = async () => {
     try {
       const response = await API.get(`/book/${id}`);
-      console.log(response.data.data.book);
+      // console.log(response.data.data.book);
       setBook(response.data.data.book);
     } catch (error) {
       console.log(error);
@@ -82,9 +82,10 @@ function BookDetail() {
             <div className="text">
               <p>{book.about}</p>
             </div>
-            <div className="button">
-              <ButtonAddMyList idBook={id} />
-
+            <div className="button ">
+              <div className="addList">
+                <ButtonAddMyList idBook={id} />
+              </div>
               <button
                 className="readBook"
                 onClick={() => {

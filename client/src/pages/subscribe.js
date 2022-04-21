@@ -103,7 +103,11 @@ function Subscribe() {
                 {/* <Stack gap={2} className="col-md-auto mx-auto">
                 <SendModal />
               </Stack> */}
-                <button type="submit" className="butttonSend">
+                <button
+                  type="submit"
+                  // style={{ width: "10px" }}
+                  className="butttonSend"
+                >
                   Send
                 </button>
               </Form>

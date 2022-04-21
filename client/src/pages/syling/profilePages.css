@@ -1,10 +1,15 @@
 .profileScreen {
   display: flex;
   background-color: #f2f2f2;
+  height: 100%;
+  overflow-x: hidden;
+  width: 100%;
+  overflow-y: hidden;
 }
 
 .profileScreen .leftSide {
   flex: 25%;
+  /* background-color: aqua; */
 }
 
 .profileScreen .rightPart {

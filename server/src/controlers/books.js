@@ -94,7 +94,7 @@ exports.deleteBook = async (req, res) => {
     });
 
     res.send({
-      message: `Delete user id: ${id} finished`,
+      message: `Delete book id: ${id} finished`,
     });
   } catch (error) {
     res.send({

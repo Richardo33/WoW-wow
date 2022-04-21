@@ -40,7 +40,7 @@ function ReadBook() {
       <br />
       <div
         className="bottomSide"
-        style={{ height: "100vh", position: "relative" }}
+        style={{ height: "90vh", position: "relative" }}
       >
         <ReactReader url={`http://localhost:5000/uploads/${read.bookFile}`} />
       </div>

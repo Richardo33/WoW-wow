@@ -1,8 +1,35 @@
-const { user } = require("../../models");
+const { user, listBookUser, books } = require("../../models");
 
 exports.getUsers = async (req, res) => {
   try {
     const users = await user.findAll();
+    res.send({
+      status: "success",
+      data: users,
+    });
+  } catch (error) {
+    console.log(error);
+    res.send({
+      status: "failed",
+      message: "masukin yg bener jancokk",
+    });
+  }
+};
+
+exports.getUserss = async (req, res) => {
+  try {
+    const users = await user.findOne({
+      where: {
+        idUser: req.user.id,
+      },
+      include: {
+        as: books,
+        through: {
+          model: listBookUser,
+          as: "bridge",
+        },
+      },
+    });
     res.send({
       status: "success",
       data: users,

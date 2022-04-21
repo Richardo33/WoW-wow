@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
           model: "listBookUser",
           as: "bridge",
         },
-        foreignKey: "idUser",
+        foreignKey: "idBooks",
       });
 
       user.hasMany(models.transaction, {

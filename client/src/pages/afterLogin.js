@@ -66,6 +66,7 @@ function AfterLogin() {
           <div className="row d-flex">
             <div className="row text-center">
               {book.map((item) => {
+                console.log(item);
                 return (
                   <div
                     key={item.id}
@@ -76,7 +77,11 @@ function AfterLogin() {
                     <img
                       src={`http://localhost:5000/uploads/${item.imgCover}`}
                       alt=""
-                      style={{ width: 200, height: 300 }}
+                      style={{
+                        width: 200,
+                        height: 300,
+                        // boxShadow: "5px 5px #888888",
+                      }}
                       className="py-2"
                     />
                     <h3>{item.title}</h3>

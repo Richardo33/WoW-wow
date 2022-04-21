@@ -10,6 +10,7 @@ const { auth } = require("../middleware/auth");
 
 const {
   getUsers,
+  getUserss,
   getUserId,
   updateUser,
   deleteUser,
@@ -32,9 +33,15 @@ const {
 
 const { register, login, checkAuth } = require("../controlers/auth");
 
-const { addMyList } = require("../controlers/myList");
+const {
+  addMyList,
+  getUserListBook,
+  findListBook,
+  deleteListBook,
+} = require("../controlers/myList");
 
 router.get("/users", getUsers);
+router.get("/userss", auth, getUserss);
 router.get("/user", auth, getUserId);
 router.patch("/user/:id", updateUser);
 router.delete("/user/:id", deleteUser);
@@ -65,5 +72,8 @@ router.post("/login", login);
 router.get("/checkAuth", auth, checkAuth);
 
 router.post("/addMyList", auth, addMyList);
+router.get("/myListBook", auth, getUserListBook);
+router.get("/myListBook/:id", auth, findListBook);
+router.delete("/deleteListBook/:id", auth, deleteListBook);
 
 module.exports = router;

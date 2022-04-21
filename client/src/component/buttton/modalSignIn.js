@@ -80,7 +80,7 @@ function ButtonSignIn() {
       console.log(error);
     }
   };
-  console.log(state);
+  // console.log(state);
 
   return (
     <div>

@@ -15,12 +15,12 @@ module.exports = (sequelize, DataTypes) => {
       //     name: "idUser",
       //   },
       // });
-      // listBookUser.belongsToMany  (models.books, {
-      //   as: "books",
-      //   foreignKey: {
-      //     name: "idBooks",
-      //   },
-      // });
+      listBookUser.belongsTo(models.books, {
+        as: "books",
+        foreignKey: {
+          name: "idBooks",
+        },
+      });
     }
   }
   listBookUser.init(

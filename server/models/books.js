@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
           model: "listBookUser",
           as: "bridge",
         },
-        foreignKey: "idBooks",
+        foreignKey: "idUser",
       });
     }
   }

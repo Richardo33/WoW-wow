@@ -2,21 +2,20 @@ import { useState } from "react";
 import IconSaveList from "../../asset/buttonList.png";
 // import "./buttonAddMyList.css";
 // import {MyListBookContext} from "../../context/myListBookContex"
-// import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 
 import { API } from "../../config/api";
 
 function ButtonAddMyList(props) {
-  // console.log(dataBook[0])
-  // const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const id = {
-    idBook: props.idBook,
+    idBooks: props.idBook,
   };
-  console.log(id);
+  // console.log(id);
 
   // const [book, setBook] = useState({
-  //   idBook: props.idBook,
+  //   idBook: props.idBooks,
   // });
 
   const handleButton = async (e) => {
@@ -28,8 +27,10 @@ function ButtonAddMyList(props) {
         },
       };
       const body = JSON.stringify(id);
-      const response = await API.post("/mylistbook", body, config);
-      console.log(response);
+      const response = await API.post("/addMyList", body, config);
+      // console.log(response);
+
+      // navigate("/profilePages");
     } catch (error) {
       console.log(error);
     }
@@ -37,7 +38,18 @@ function ButtonAddMyList(props) {
 
   return (
     <div className="buttonAddMyList">
-      <button onClick={handleButton}>
+      <button
+        onClick={handleButton}
+        style={{
+          background: "red",
+          marginRight: "20px",
+          padding: "10px 20px",
+          borderRadius: "5px",
+          marginBottom: "50px",
+          border: "none",
+          color: "white",
+        }}
+      >
         Add Mylist Book <img src={IconSaveList} alt="" />{" "}
       </button>
     </div>

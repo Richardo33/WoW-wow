@@ -49,8 +49,9 @@
 .butttonSend {
   background-color: red;
   border-radius: 5px;
-  padding: 5px 165px;
+  /* padding: 5px 130px; */
   color: white !important;
   font-size: 20px !important;
   border: none;
+  width: 25vh;
 }
