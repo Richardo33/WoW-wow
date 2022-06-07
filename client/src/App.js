@@ -9,7 +9,7 @@ import Transactions from "./pages/transactionPages";
 import PrivateRoute from "./component/privateRoute";
 
 //import bootstrap
-// import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 //import necessary object from react-router-dom
 
