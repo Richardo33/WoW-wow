@@ -2,7 +2,7 @@ import axios from "axios";
 
 //create base URL
 export const API = axios.create({
-  baseURL: "http://localhost:5000/api/v1/",
+  baseURL: "https://wow-richard.herokuapp.com/api/v1/",
 });
 
 //set auth token header
